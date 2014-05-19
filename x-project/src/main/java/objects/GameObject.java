@@ -3,7 +3,7 @@ package objects;
 /**
  * Created by SMelnik on 5/15/2014.
  */
-public interface SnakeGameObject {
+public interface GameObject {
     public void setCoordinates(int x, int y);
 
     public int getCoordinateX();

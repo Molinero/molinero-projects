@@ -1,0 +1,17 @@
+.game-map-segment {
+-fx-border: 1px;
+-fx-border-color: black;
+-fx-border-style: dotted;
+-fx-background-color: green;
+-fx-spacing: 5;
+}
+
+.game-map-segment: hover {
+-fx-border-style: solid;
+-fx-background-color: gray;
+-fx-cursor: hand;
+}
+
+.game-map {
+-fx-padding: 5px;
+}
