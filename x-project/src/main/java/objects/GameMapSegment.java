@@ -16,7 +16,6 @@ public class GameMapSegment implements GameObject  {
         segment.setMaxSize(getSegmentWidth(), getSegmentHeight());
         segment.setMinSize(getSegmentWidth(), getSegmentHeight());
         segment.getStyleClass().add("game-map-segment");
-        Tooltip tooltip = new Tooltip("Choose the place for building");
         return segment;
     }
 

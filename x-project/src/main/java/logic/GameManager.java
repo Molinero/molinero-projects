@@ -5,7 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 import objects.GameMap;
-
 import java.io.File;
 
 /**

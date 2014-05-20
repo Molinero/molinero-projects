@@ -1,8 +1,14 @@
 package objects;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.SerializedName;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import sun.rmi.runtime.Log;
 
+import java.io.*;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -18,7 +24,7 @@ public class GameMap extends GridPane {
     }
 
     private void setGamMapStructure(){
-        for(int i = 0; i < getGameMapSize(); i++){
+        for(int i = 0; i < gameMapSize; i++){
             ColumnConstraints column = new ColumnConstraints();
             RowConstraints row = new RowConstraints();
             getRowConstraints().add(row);
@@ -27,16 +33,26 @@ public class GameMap extends GridPane {
     }
 
     public void fillTheGameMap(){
-        for(int i = 0; i < getGameMapSize(); i ++){
-            for(int j = 0; j < getGameMapSize(); j ++){
-                if(new Random().nextBoolean()) {
+        GameMapStructure gameMapStructure = new GameMapStructure();
+
+        try {
+            FileReader fr = new FileReader(new File("jsons/map1.json"));
+            BufferedReader br = new BufferedReader(fr);
+            Gson gson = new Gson();
+            gameMapStructure = gson.fromJson(br, GameMapStructure.class);
+            System.out.println(gameMapStructure.getMapStructure().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        List<List> n = gameMapStructure.getMapStructure();
+
+        for(int i = 0; i < gameMapSize; i ++){
+            for(int j = 0; j < gameMapSize; j ++){
+                if(Integer.parseInt(n.get(j).get(i).toString()) == 1) {
                     add(new GameMapSegment().getSegment(), i, j);
                 }
             }
         }
-    }
-
-    public int getGameMapSize() {
-        return gameMapSize;
     }
 }
