@@ -1,14 +1,11 @@
 package objects;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.SerializedName;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
-import sun.rmi.runtime.Log;
 
-import java.io.*;
-import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Random;
 
 /**
@@ -36,23 +33,34 @@ public class GameMap extends GridPane {
         GameMapStructure gameMapStructure = new GameMapStructure();
 
         try {
-            FileReader fr = new FileReader(new File("jsons/map1.json"));
-            BufferedReader br = new BufferedReader(fr);
-            Gson gson = new Gson();
-            gameMapStructure = gson.fromJson(br, GameMapStructure.class);
-            System.out.println(gameMapStructure.getMapStructure().toString());
+            String mapUrl = getMapConfigurationFile();
+            if(mapUrl != null){
+                BufferedReader br = new BufferedReader(new FileReader(mapUrl));
+                gameMapStructure = new Gson().fromJson(br, GameMapStructure.class);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        List<List> n = gameMapStructure.getMapStructure();
+        int[][] n = gameMapStructure.getMapStructure();
 
         for(int i = 0; i < gameMapSize; i ++){
             for(int j = 0; j < gameMapSize; j ++){
-                if(Integer.parseInt(n.get(j).get(i).toString()) == 1) {
+                if(n[j][i] == 1) {
                     add(new GameMapSegment().getSegment(), i, j);
                 }
             }
         }
+    }
+
+    private String getMapConfigurationFile(){
+        int[] mapIds = {0, 1, 2};
+        String configUrl = null;
+        if(new Random().nextInt(mapIds.length) == 0) {
+            configUrl = "jsons/map1.json";
+        } else if(new Random().nextInt(mapIds.length) == 1) {
+            configUrl = "jsons/map2.json";
+        }
+        return configUrl;
     }
 }

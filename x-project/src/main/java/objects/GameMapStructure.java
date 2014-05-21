@@ -6,13 +6,13 @@ import java.util.List;
  * Created by SMelnik on 5/20/2014.
  */
 public class GameMapStructure {
-    private List<List> mapStructure;
+    private int[][] mapStructure;
 
-    public List<List> getMapStructure() {
+    public int[][]  getMapStructure() {
         return mapStructure;
     }
 
-    public void setMapStructure(List<List> mapStructure) {
+    public void setMapStructure(int[][]  mapStructure) {
         this.mapStructure = mapStructure;
     }
 }
