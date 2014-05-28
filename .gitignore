@@ -1,3 +1,4 @@
 /x-project/.idea
 /x-project/x-project.iml
 /x-project/target
+/x-project/target/classes/logic/*.class

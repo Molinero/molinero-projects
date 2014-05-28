@@ -1,10 +1,12 @@
 package objects;
 
-/**
- * Created by SMelnik on 5/20/2014.
- */
 public enum Units {
     TOWER,
     HOUSE,
-    CASTLE
+    CASTLE;
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

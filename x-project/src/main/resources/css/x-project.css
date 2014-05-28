@@ -2,16 +2,22 @@
 -fx-border: 1px;
 -fx-border-color: black;
 -fx-border-style: dotted;
--fx-background-color: green;
+-fx-background-color: #339900;
 -fx-spacing: 5;
 }
 
 .game-map-segment: hover {
 -fx-border-style: solid;
--fx-background-color: gray;
+-fx-border-color: #ffcc33;
+-fx-background-color: #33cc33;
 -fx-cursor: hand;
 }
 
 .game-map {
 -fx-padding: 5px;
+-fx-background-color: #66ccff;
+}
+
+.panel {
+-fx-background-color: #f0f0f0;
 }

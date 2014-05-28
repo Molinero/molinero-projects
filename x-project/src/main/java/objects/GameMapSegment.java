@@ -1,14 +1,10 @@
 package objects;
 
-import javafx.scene.control.Tooltip;
 import javafx.scene.layout.VBox;
 
-/**
- * Created by SMelnik on 5/19/2014.
- */
-public class GameMapSegment implements GameObject  {
-    private double segmentWidth = 100;
-    private double segmentHeight = 100;
+public class GameMapSegment {
+    private double segmentWidth = 70;
+    private double segmentHeight = 70;
     private VBox segment;
 
     public VBox getSegment() {
@@ -25,30 +21,5 @@ public class GameMapSegment implements GameObject  {
 
     public double getSegmentHeight() {
         return segmentHeight;
-    }
-
-    @Override
-    public void setCoordinates(int x, int y) {
-
-    }
-
-    @Override
-    public int getCoordinateX() {
-        return 0;
-    }
-
-    @Override
-    public int getCoordinateY() {
-        return 0;
-    }
-
-    @Override
-    public void setCoordinateX(int x) {
-
-    }
-
-    @Override
-    public void setCoordinateY(int y) {
-
     }
 }
