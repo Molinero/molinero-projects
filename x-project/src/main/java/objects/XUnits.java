@@ -1,6 +1,6 @@
 package objects;
 
-public enum Units {
+public enum XUnits {
     TOWER,
     HOUSE,
     CASTLE;

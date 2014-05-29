@@ -1,6 +1,6 @@
 .game-map-segment {
 -fx-border: 1px;
--fx-border-color: black;
+-fx-border-color: #cccccc;
 -fx-border-style: dotted;
 -fx-background-color: #339900;
 -fx-spacing: 5;

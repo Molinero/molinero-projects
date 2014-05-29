@@ -2,7 +2,7 @@ package objects;
 
 import javafx.scene.layout.VBox;
 
-public class GameMapSegment {
+public class XMapSegment {
     private double segmentWidth = 70;
     private double segmentHeight = 70;
     private VBox segment;

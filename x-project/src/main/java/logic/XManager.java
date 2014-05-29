@@ -4,14 +4,13 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SplitPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import objects.GameMap;
-import objects.GamePanel;
+import objects.XMap;
+import objects.XPanel;
 
 import java.io.File;
 
-public class GameManager extends Application {
+public class XManager extends Application {
     public static void main(String[] args) {
         launch(args);
     }
@@ -23,8 +22,8 @@ public class GameManager extends Application {
         ScrollPane scrollPane = new ScrollPane();
         SplitPane splitPane = new SplitPane();
 
-        GamePanel panel = new GamePanel();
-        GameMap gameMap = new GameMap();
+        XPanel panel = new XPanel();
+        XMap gameMap = new XMap();
 
         scrollPane.setContent(splitPane);
         splitPane.getItems().addAll(gameMap, panel);

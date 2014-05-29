@@ -2,7 +2,7 @@ package objects;
 
 import java.util.List;
 
-public class GameMapStructure {
+public class XMapStructure {
     private List<int[]> mapStructure;
 
     public List<int[]>  getMapStructure() {
